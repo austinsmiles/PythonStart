@@ -50,49 +50,30 @@ y = 15
 print(bool(x))  # True
 print(bool(y))  # True
 
-# ---- List operations start -----
+# Conditions
+a = 33
+b = 33
+if b > a:
+    print("b is greater than a")
+elif a == b:
+    print("a and b are equal")
 
-varList1 = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
-print("List first: ", varList1[0])  # 1
-print("List last : ", varList1[-1])  # 10
-print("List fwd range:", varList1[2:5])  # ['3', '4', '5'] -- includes lower index(2), excludes upper index(5)
-print("List rev range:", varList1[-5:-2])  # ['6', '7', '8'] -- includes lower index(-2), excludes upper index(-5)
-print("Printing the array:")
-for x in varList1:
-    print(x, end="|")
+a = 2
+b = 330
+print("A") if a > b else print("B")  # short hand if-else
+
+i = 1
+while i < 6:
+    print(i,end=",")
+    i += 1
+else:
+    print("i is no longer less than 6")
+
+for i in range(6):  # 0-5, increment 1
+    print(i,end=",")
 print()
-chk = "3"
-if chk in varList1:
-    print(chk, " is present in the array ", varList1)
-print("Length of the array is ", len(varList1))  # 10
+for i in range(2,20,3):  # 0-19, increment 3
+    print(i,end=",")
+else:
+    print("Finally finished!")
 
-newelement = "11"
-varList1.append(newelement)
-print("Adding ", newelement, ". New list is : ", varList1)
-varList1.remove(newelement)
-print("Removing ", newelement, ". New list is : ", varList1)
-del varList1[len(varList1) - 1]  # same as varList1.pop()
-print(varList1)
-varList2 = varList1.copy()  # same as varList2=list(varList1)
-print("Copied list : ", varList2)
-varList3 = varList1 + varList2  # same as varList1.extend(varList2)
-print("Joined list 3 : ", varList3)
-del varList3 #deletes the list
-# ---- List operations end -----
-
-# ---- Tuple operations start -----
-# Most operations for list are valid for tuple, except add/append and remove/del items
-varTuple1 = ("apple", "banana", "cherry")
-print("Tuple before change", varTuple1)
-varListTuple1 = list(varTuple1)
-varListTuple1[1] = "kiwi"
-varTuple1 = tuple(varListTuple1)
-print("Tuple after change", varTuple1)
-
-varSingleValidTuple = ("apple",)
-print(type(varSingleValidTuple))  # <class 'tuple'>
-
-# NOT a tuple
-varSingleInvalidTuple = ("apple")  # comma missing at the end, so the tuple is invalid
-print(type(varSingleInvalidTuple))  # <class 'str'>
-# ---- Tuple operations end -----
